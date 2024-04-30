@@ -1,0 +1,43 @@
+export const tokenName = "Honeycomb"
+export const formItemLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 8 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 16 },
+    },
+  };
+export const dayDataArray  = [
+  "QtyDay1",
+  "QtyDay2",
+  "QtyDay3",
+  "QtyDay4",
+  "QtyDay5",
+  "QtyDay6",
+  "QtyDay7",
+  "QtyDay8",
+  "QtyDay9",
+  "QtyDay10",
+  "QtyDay11",
+  "QtyDay12",
+  "QtyDay13",
+  "QtyDay14",
+  "QtyDay15",
+  "QtyDay16",
+  "QtyDay17",
+  "QtyDay18",
+  "QtyDay19",
+  "QtyDay20",
+  "QtyDay21",
+  "QtyDay22",
+  "QtyDay23",
+  "QtyDay24",
+  "QtyDay25",
+  "QtyDay26",
+  "QtyDay27",
+  "QtyDay28",
+  "QtyDay29",
+  "QtyDay30",
+];

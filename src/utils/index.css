@@ -1,0 +1,13 @@
+.ant-form-item-label {
+  text-align: left; /* Align label to the start of the left */
+}
+
+.ant-form-item-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-form-item-control-input {
+  flex: 1; /* Allow input field to take up remaining space */
+}

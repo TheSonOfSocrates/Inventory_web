@@ -108,6 +108,21 @@ const CurrentItemInventory = () => {
     expiration_date: "",
   });
 
+  let combinedRegions = [];
+
+  regions.forEach(regionItem => {
+    const countryItem = countries.find((item) => item?.id === regionItem?.parent_location_id);
+      if (countryItem) {
+          const combinedRegion = {
+              ...regionItem,
+              name: `${countryItem.name}-${regionItem.name}`, 
+              parent_location_id: countryItem.id 
+          };
+
+          combinedRegions.push(combinedRegion);
+      }
+  });
+
   const formItems = [
     { name: "status", label: "Status", data: status },
     { name: "sku_id", label: "SKU", data: itemSKUs },
@@ -115,7 +130,7 @@ const CurrentItemInventory = () => {
     { name: "type_id", label: "Type Id", data: types },
     { name: "expiration_date", label: "Expiration", data: expiration },
     { name: "queue", label: "Queue", data: fifo },
-    { name: "region_id", label: "Location", data: regions },
+    { name: "region_id", label: "Location", data: combinedRegions },
     { name: "subtype_id", label: "Sub Type", data: subTypes },
     { name: "category_id", label: "Category", data: categories },
     { name: "subcategory_id", label: "Sub Category", data: subCategories },

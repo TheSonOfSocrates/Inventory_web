@@ -108,20 +108,20 @@ const CurrentItemInventory = () => {
     expiration_date: "",
   });
 
-  let combinedRegions = [];
+  let combinedRegions = [...regions, ...countries];
 
-  regions.forEach(regionItem => {
-    const countryItem = countries.find((item) => item?.id === regionItem?.parent_location_id);
-      if (countryItem) {
-          const combinedRegion = {
-              ...regionItem,
-              name: `${countryItem.name}-${regionItem.name}`, 
-              parent_location_id: countryItem.id 
-          };
+  // regions.forEach((regionItem) => {
+  //   const countryItem = countries.find((item) => item?.id === regionItem?.parent_location_id);
+  //   if (countryItem) {
+  //     const combinedRegion = {
+  //       ...regionItem,
+  //       name: `${countryItem.name}-${regionItem.name}`,
+  //       parent_location_id: countryItem.id,
+  //     };
 
-          combinedRegions.push(combinedRegion);
-      }
-  });
+  //     combinedRegions.push(combinedRegion);
+  //   }
+  // });
 
   const formItems = [
     { name: "status", label: "Status", data: status },
@@ -975,6 +975,8 @@ const CurrentItemInventory = () => {
           } else {
             return filter[key] === "";
           }
+        } else if (key === "region_id") {
+          return filter[key] === "" || item[key] === filter[key] || item.country_id === filter[key];
         } else {
           return filter[key] === "" || item[key] === filter[key];
         }
